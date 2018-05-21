@@ -13,3 +13,9 @@ PIL 已改名Pillow
 sudo pip install Pillow
 ```
 
+No module named pbr.version
+
+```
+sudo easy_install pbr
+```
+
