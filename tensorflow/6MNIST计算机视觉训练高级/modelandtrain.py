@@ -22,6 +22,8 @@ def train():
 
   # None表示第一个维度可以是任意长度
 
+  # 目标类别和softmax激活
+  # 函数应用于模型预测之间的交叉熵
   cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
 
   train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
