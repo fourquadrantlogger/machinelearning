@@ -22,9 +22,11 @@ Installing setuptools, pkg_resources, pip, wheel...done.
 
 (tensorflow) [lipeng@lipeng-pc]$ easy_install -U pip
 
-5.安装tensorflow，我这里安装的是cpu版本的：
+5.cuda
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal
+6.安装tensorflow
 
-(tensorflow) [lipeng@lipeng-pc]$ pip install --upgrade tensorflow
+http://www.tensorfly.cn/tfdoc/get_started/os_setup.html
 
 ## 步骤
 + 安装anaconda ：python的科学发行版，内置数百个python的库
