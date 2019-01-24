@@ -24,6 +24,7 @@ Installing setuptools, pkg_resources, pip, wheel...done.
 
 5.cuda
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal
+
 6.安装tensorflow
 
 http://www.tensorfly.cn/tfdoc/get_started/os_setup.html
