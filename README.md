@@ -1,5 +1,9 @@
 # machinelearning
-machinelearning
+
+## install 
+
+https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)
+
 
 ## 机器学习算法分类
 
