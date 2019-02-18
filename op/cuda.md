@@ -16,3 +16,12 @@ sudo make
 
 ```
 如果显示的是一些关于GPU的信息，则说明安装成功了
+
+## 多版本切换
+
+```
+sudo rm -rf cuda
+sudo ln -s /usr/local/cuda-9.0 /usr/local/cuda
+或
+sudo ln -s /usr/local/cuda-10.0 /usr/local/cuda
+```
