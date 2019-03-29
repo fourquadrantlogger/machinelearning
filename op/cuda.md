@@ -2,6 +2,15 @@
 ```
 lspci | grep -i nvidia
 ```
++ 更新显卡驱动
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get install nvidia-418
+```
+
+https://developer.nvidia.com/cuda-downloads
+
+
 + 会输出CUDA的版本信息
 ```
 nvcc -V
