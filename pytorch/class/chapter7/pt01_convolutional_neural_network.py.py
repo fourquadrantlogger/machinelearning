@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import torch
 import torch.nn as nn
 import torchvision
 from torch.autograd import Variable
@@ -6,9 +7,10 @@ from torch.autograd import Variable
 EPOCH = 3
 BATCH_SIZE = 50
 LR = 0.001
+MINIST = '/CODE/github.com/timeloveboy/machinelearning/mnist'
 DOWNLOAD_MNIST = True
 train_data = torchvision.datasets.MNIST(
-    root='./mnist/',
+    root=MINIST,
     train=True,
     transform=torchvision.transforms.ToTensor(),
     download=DOWNLOAD_MNIST,
@@ -20,7 +22,7 @@ for i in range(1, 4):
     plt.imshow(train_data.train_data[i].numpy(), cmap='gray')
     plt.title('%i' % train_data.train_labels[i])
 plt.show()
-test_data = torchvision.datasets.MNIST(root='./mnist/', train=False)
+test_data = torchvision.datasets.MNIST(root=MINIST, train=False)
 test_x = Variable(torch.unsqueeze(test_data.test_data, dim=1),
                   volatile=True).type(torch.FloatTensor)
 test_y = test_data.test_labels
@@ -65,7 +67,11 @@ class CNN(nn.Module):
 
 cnn = CNN()
 print(cnn)
-params = list(net.parameters())
+params = list(cnn.parameters())
+
+from torch.utils.data import DataLoader
+
+train_loader = DataLoader(dataset=train_data, batch_size=64, shuffle=True)
 print(len(params))
 print(params[0].size())
 optimizer = torch.optim.Adam(cnn.parameters(), lr=LR)
@@ -90,7 +96,7 @@ for epoch in range(EPOCH):
 
             print('Epoch:', epoch, '|Step:', step,
 
-                  '|train loss:%.4f' % loss.data[0], '|test accuracy:%.4f' % accuracy)
+                  '|train loss:%.4f' % loss.item(), '|test accuracy:%.4f' % accuracy)
 test_output = cnn(test_x[:20])
 
 pred_y = torch.max(test_output, 1)[1].data.numpy().squeeze()

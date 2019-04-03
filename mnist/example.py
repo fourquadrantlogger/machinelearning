@@ -5,7 +5,7 @@ import numpy as np
 
 
 def load_mnist(path, kind='train'):
-    """Load MNIST data from `path`"""
+    """Load mnist data from `path`"""
     labels_path = os.path.join(path,
                                '%s-labels-idx1-ubyte'
                                % kind)
@@ -29,7 +29,7 @@ def load_mnist(path, kind='train'):
 
 import matplotlib.pyplot as plt
 
-X_train, ls = load_mnist("/CODE/github.com/timeloveboy/machinelearning/MNIST")
+X_train, ls = load_mnist("/CODE/github.com/timeloveboy/machinelearning/mnist")
 
 fig, ax = plt.subplots(
     nrows=2,
